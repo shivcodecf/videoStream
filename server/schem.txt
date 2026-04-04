@@ -1,0 +1,38 @@
+backend/
+├── src/
+│   ├── config/
+│   │   └── db.js
+│
+│   ├── controllers/
+│   │   ├── auth.controller.js
+│   │   └── video.controller.js
+│
+│   ├── routes/
+│   │   ├── auth.routes.js
+│   │   └── video.routes.js
+│
+│   ├── models/
+│   │   ├── User.js
+│   │   └── Video.js
+│
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── role.js
+│   │   └── upload.js
+│
+│   ├── services/
+│   │   └── videoProcessor.js
+│
+│   ├── sockets/
+│   │   └── socket.js
+│
+│   ├── utils/
+│   │   └── generateToken.js
+│
+│   ├── app.js
+│   └── server.js
+│
+├── uploads/
+├── .env
+├── package.json
+└── README.md
