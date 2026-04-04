@@ -19,5 +19,3 @@ build/
 # Vite
 .vite/
 
-# Optional
-uploads/
