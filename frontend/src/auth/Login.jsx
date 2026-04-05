@@ -6,13 +6,14 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(""); // ✅ error state
 
   const navigate = useNavigate();
 
   const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   const handleLogin = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     if (!email || !password) {
       return alert("Please fill all fields");
@@ -20,26 +21,26 @@ const Login = () => {
 
     try {
       setLoading(true);
+      setError(""); // reset
 
       const res = await axios.post(
-        `${API_URL}/api/auth/login`, 
+        `${API_URL}/api/auth/login`,
         { email, password },
         { withCredentials: true },
       );
 
       alert("Login successful");
 
-    //   setTimeout(() => {
-    //     navigate("/dashboard");
-    //   }, 400);
+      //   setTimeout(() => {
+      //     navigate("/dashboard");
+      //   }, 400);
 
-      
       localStorage.setItem("isAuth", "true");
 
-        navigate("/dashboard");
+      navigate("/dashboard");
     } catch (err) {
       console.error(err);
-      alert(err.response?.data?.msg || "Login failed");
+      setError(err.response?.data?.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -65,7 +66,6 @@ const Login = () => {
             Enter your credentials to continue
           </p>
 
-         
           <form onSubmit={handleLogin}>
             <input
               type="email"
@@ -82,6 +82,12 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+
+            {error && (
+              <div className="bg-red-100 text-red-700 p-2 mb-3 rounded">
+                {error}
+              </div>
+            )}
 
             <button
               type="submit"
@@ -103,6 +109,8 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      {/* 🔥 ERROR MESSAGE */}
     </div>
   );
 };

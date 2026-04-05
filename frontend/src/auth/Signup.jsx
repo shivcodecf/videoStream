@@ -4,29 +4,30 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
-  
+
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(""); // ✅ error state
 
   const navigate = useNavigate();
 
   const API_URL = import.meta.env.VITE_BACKEND_URL;
 
-
   const handleSignup = async () => {
     try {
       setLoading(true);
+      setError("");
 
       await axios.post(
         `${API_URL}/api/auth/signup`,
         { email, password },
-        { withCredentials: true }
+        { withCredentials: true },
       );
 
       alert("Account created successfully");
-      navigate("/login")
+      navigate("/login");
     } catch (err) {
-      alert(err.response?.data?.msg || "Signup failed");
+      setError(err.response?.data?.message || "Signup failed");
     } finally {
       setLoading(false);
     }
@@ -66,6 +67,12 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
+          {error && (
+            <div className="bg-red-100 text-red-700 p-2 mb-3 rounded">
+              {error}
+            </div>
+          )}
+
           <button
             onClick={handleSignup}
             disabled={loading}
@@ -76,7 +83,10 @@ const Signup = () => {
 
           <p className="text-sm text-gray-500 mt-4 text-center">
             Already have an account?{" "}
-            <span onClick = {()=>navigate("/")} className="text-green-600 cursor-pointer">
+            <span
+              onClick={() => navigate("/")}
+              className="text-green-600 cursor-pointer"
+            >
               Login
             </span>
           </p>
@@ -84,6 +94,6 @@ const Signup = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Signup
+export default Signup;
