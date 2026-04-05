@@ -206,9 +206,11 @@ FRONTEND_URL=https://video-stream-dtny.vercel.app
 
 VITE_BACKEND_URL=https://videostream-mk3g.onrender.com
 
+```
+
 ---
 
-```
+
 
 ## 🧪 Run Locally
 
