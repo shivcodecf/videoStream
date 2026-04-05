@@ -25,7 +25,7 @@ const Signup = () => {
       );
 
       alert("Account created successfully");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed");
     } finally {
