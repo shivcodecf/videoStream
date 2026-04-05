@@ -220,15 +220,18 @@ git clone https://github.com/your-username/video-streaming.git
 
 cd video-streaming
 
-
+```
 ---
 
 ### 2️⃣ Backend setup
 
+```bash
 
 cd server
 npm install
 npm run dev
+
+```
 
 ```
 
@@ -250,10 +253,13 @@ cd video-streaming
 
 ### 2️⃣ Backend setup
 
+```bash
 
 cd server
 npm install
 npm run dev
+
+```
 
 ```
 
