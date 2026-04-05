@@ -234,27 +234,18 @@ npm run dev
 ```
 
 
-
----
-
-## 🧪 Run Locally
-
-### 1️⃣ Clone repo
-
-```
-
-
-git clone https://github.com/shivcodecf/videoStream.git
-
-cd video-streaming
-
-```
-
-
 ---
 
 
+### Frontend setup
 
+```bash
+
+cd frontend
+npm install
+npm run dev
+
+```
 
 
 ---
