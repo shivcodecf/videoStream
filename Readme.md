@@ -216,7 +216,7 @@ VITE_BACKEND_URL=https://videostream-mk3g.onrender.com
 
 ```bash
 
-git clone https://github.com/your-username/video-streaming.git
+git clone https://github.com/shivcodecf/videoStream.git
 
 cd video-streaming
 
@@ -244,7 +244,7 @@ npm run dev
 ```bash
 
 
-git clone https://github.com/your-username/video-streaming.git
+git clone https://github.com/shivcodecf/videoStream.git
 
 cd video-streaming
 
