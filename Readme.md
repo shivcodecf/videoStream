@@ -233,7 +233,7 @@ npm run dev
 
 ```
 
-```
+
 
 ---
 
@@ -241,7 +241,7 @@ npm run dev
 
 ### 1️⃣ Clone repo
 
-```bash
+```
 
 
 git clone https://github.com/shivcodecf/videoStream.git
@@ -253,15 +253,7 @@ cd video-streaming
 
 ---
 
-### 2️⃣ Backend setup
 
-```bash
-
-cd server
-npm install
-npm run dev
-
-```
 
 
 
