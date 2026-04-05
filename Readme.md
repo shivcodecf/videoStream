@@ -126,7 +126,9 @@ A full-stack video streaming platform where users can upload videos, process the
 
 ---
 
-## 📁 Project Structure
+
+
+```
 
 videoStreaming/
 │
@@ -176,6 +178,8 @@ videoStreaming/
 │ └── package.json
 │
 └── README.md
+
+```
 
 
 ---
